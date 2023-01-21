@@ -2,6 +2,7 @@ this folder is for us to keep track of the testing we're doing for tensorflow an
 
 # Tensor
 Tensor_Training.ipynb is my training file that i use to train the tensorflow model
+
 This file is based on https://www.tensorflow.org/tutorials/images/classification#run_the_tensorflow_lite_model
 
 # OpenCV
