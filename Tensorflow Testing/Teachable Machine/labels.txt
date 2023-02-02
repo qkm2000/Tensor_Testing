@@ -1,0 +1,31 @@
+0 1
+1 2
+2 3
+3 4
+4 5
+5 6
+6 7
+7 8
+8 9
+9 Down Red
+10 Up White
+11 Left Blue
+12 Right Green
+13 Circle
+14 A
+15 B
+16 C
+17 D
+18 E
+19 F
+20 G
+21 H
+22 S
+23 T
+24 U
+25 V
+26 W
+27 X
+28 Y
+29 Z
+30 Marker
