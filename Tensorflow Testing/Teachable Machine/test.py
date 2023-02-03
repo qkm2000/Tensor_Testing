@@ -2,11 +2,29 @@ from keras.models import load_model  # TensorFlow is required for Keras to work
 import cv2  # Install opencv-python
 import numpy as np
 
+
+# def center_crop(img, dim):
+#     """Returns center cropped image
+#     Args:
+#     img: image to be center cropped
+#     dim: dimensions (width, height) to be cropped
+#     """
+#     width, height = img.shape[1], img.shape[0]
+
+#     # process crop width and height for max available dimension
+#     crop_width = dim[0] if dim[0] < img.shape[1] else img.shape[1]
+#     crop_height = dim[1] if dim[1] < img.shape[0] else img.shape[0] 
+#     mid_x, mid_y = int(width/2), int(height/2)
+#     cw2, ch2 = int(crop_width/2), int(crop_height/2)
+#     crop_img = img[mid_y-ch2:mid_y+ch2, mid_x-cw2:mid_x+cw2]
+#     return crop_img
+
+
 # Disable scientific notation for clarity
 np.set_printoptions(suppress=True)
 
 # Load the model
-model = load_model("keras_Model.h5", compile=False)
+model = load_model("keras_model.h5", compile=False)
 
 # Load the labels
 class_names = open("labels.txt", "r").readlines()
@@ -18,7 +36,8 @@ while True:
     # Grab the webcamera's image.
     ret, image = camera.read()
     
-    image = image[0:720, 280:1000]
+    # image = image[0:720, 280:1000]
+    # image = center_crop(image, [500, 500])
 
     # Resize the raw image into (224-height,224-width) pixels
     image = cv2.resize(image, (224, 224), interpolation=cv2.INTER_AREA)
