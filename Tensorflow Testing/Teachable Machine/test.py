@@ -1,7 +1,7 @@
 from keras.models import load_model  # TensorFlow is required for Keras to work
 import cv2  # Install opencv-python
 import numpy as np
-
+import os
 
 # def center_crop(img, dim):
 #     """Returns center cropped image
@@ -36,7 +36,7 @@ while True:
     # Grab the webcamera's image.
     ret, image = camera.read()
     
-    # image = image[0:720, 280:1000]
+    image = image[0:720, 280:1000]
     # image = center_crop(image, [500, 500])
 
     # Resize the raw image into (224-height,224-width) pixels
@@ -63,6 +63,8 @@ while True:
 
     # Listen to the keyboard for presses.
     keyboard_input = cv2.waitKey(1)
+    
+    os.system("cls")
 
     # 27 is the ASCII for the esc key on your keyboard.
     if keyboard_input == 27:
